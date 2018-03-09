@@ -1,0 +1,15 @@
+{
+    "name": "nodetutorial",
+    "version": "1.0.0",
+    "description": "Simple Test App",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "dependencies": {
+        "body-parser": "*",
+        "express": "4.15.1"
+    },
+    "author": "Sönke Krusche",
+    "license": "ISC"
+}
