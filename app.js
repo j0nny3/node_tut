@@ -3,26 +3,46 @@ var bodyParser = require("body-parser");
 var path = require("path");
 
 var app = express();
-/*
-var logger = function(req, res, next) {
-    console.log("Logging...");
-    next();
-}
-app.use(logger);
-*/
+
+
+// View Engine, res.render("view name ohne dateiendung")
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
+
 // BodyParser Middleware
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 
-// Set Static Path
-app.use(express.static(path.join(__dirname, 'public')))
+// Set Static Path, res.send "html-file-name ohne endung"
+app.use(express.static(path.join(__dirname, 'public')));
 
-var people = [{
-    name: 'Jeff',
-    age: 30
-}]
+var users = [{
+    id: 1,
+    first_name: "John",
+    last_name: "Doe",
+    email: "johndoe@gmail.com",
+  },
+  {
+    id: 2,
+    first_name: "Bob",
+    last_name: "Smith",
+    email: "bobsmith@gmail.com",
+  }, {
+    id: 3,
+    first_name: "Jill",
+    last_name: "Jackson",
+    email: "jjackson@gmail.com",
+  }
+]
 
 
-app.get("/", (req, res) => res.send("Hello World "))
+app.get("/", function(req, res) {
+  res.render("index", {
+    title: "Customers",
+    users: users
+  });
+});
 
-app.listen(80, () => console.log("Server auf Port 80 gestartet"));
+app.listen(3000, () => console.log("Server auf Port 3000 gestartet"));
