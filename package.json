@@ -8,8 +8,15 @@
     },
     "dependencies": {
         "body-parser": "*",
+<<<<<<< HEAD
         "ejs": "^2.5.7",
         "express": "4.15.1"
+=======
+        "e": "0.0.4",
+        "ejs": "^2.5.7",
+        "express": "4.15.1",
+        "nodemon": "*"
+>>>>>>> c2633fe76b86e7347e1a82701b3726b8e1719255
     },
     "author": "Sönke Krusche",
     "license": "ISC"
