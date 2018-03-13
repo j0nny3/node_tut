@@ -7,7 +7,7 @@ var Bestellungen = mongoose.model("Bestellungen");
 var liste;
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  Bestellungen.find({}, "gericht name", function(err, bestellungen) {
+  Bestellungen.find({}, "gericht name preis", function(err, bestellungen) {
     if (err) return handleError(err);
     liste = bestellungen;
     console.log(bestellungen);
