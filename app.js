@@ -16,7 +16,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var app = express();
-var mongoDB = "mongodb://127.0.0.1:27017/Beispiel"
+var mongoDB = "mongodb://10.147.30.222:27017/Beispiel"
 mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
